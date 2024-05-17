@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Movie Subpage</title>
+		<link rel ="stylesheet" type ="text/css" href ="Warner_Bros.css"/>
+	</head>
+	
+		 <style>
+		  article{
+					position: flex;
+			}
+			
+			article section {
+				  height: 15%;
+				  color: #fff;
+				  text-align: right;
+				  padding: 1% 1% 1% 1%;
+				  margin: 20px 20px;
+				  background:  #1B1212;
+				  border: solid 1px #000000;
+				  z-index: -1;
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				  
+			}
+			
+			article section p{
+				margin-top: 6%;
+				margin-left: 6%;
+			}
+			
+			.imagecontainer{
+			  position: relative;
+			  top: 15%; 
+			  left: 15%;
+			  transform: translate(-10%, -10%);
+			}
+			.movie-player {
+			  height: 50%;
+			  width: 100%;
+			}
+			
+			.about-content {
+      margin-top: 20px;
+    }
+		  </style>
+	
+	<body>
+	
+		<header>
+				<button class="language">Language</button>
+					<form class="search">
+					  <label>
+						<input type="text" placeholder="Search...">
+					  </label>
+					  <button type="submit">Search</button>
+					</form>
+				<div class="login-signup">
+				  <a href="#">Login</a>
+				  <button>Sign up</button>
+				</div>
+		</header>
+		
+		
+		
+		<ul class="menu cf">
+			<li><a href="HOMEPAGE.html">Home</a></li>
+			<li>
+				<a href="MOVIE.html">Movies</a>
+					<ul class="submenu">
+						<li><a href=>Featured</a> </li>
+						<li><a href=>Coming Soon</a> </li>
+						<li><a href=>New Releases</a> </li>
+						<li><a href=>Movies A-z</a> </li>
+						<li><a href=>Genres</a> </li>
+					</ul>
+			</li>
+			<li>
+				<a href="TV SHOWS.html">TV SHOWS</a>
+					<ul class="submenu">
+						<li><a href=>Featured</a> </li>
+						<li><a href=>On-going</a> </li>
+						<li><a href=>Upcoming</a> </li>
+						<li><a href=>Series A-Z</a> </li>
+						<li><a href=>Genres</a> </li>
+					</ul>
+			</li>
+			<li>
+				<a href="GAMES.html">GAMES</a>
+					<ul class="submenu">
+						<li><a href=>Upcoming</a> </li>
+						<li><a href=>PC Games</a> </li>
+						<li><a href=>Mobile Games</a> </li>
+						<li><a href=>Console Games</a> </li>
+						<li><a href=>Community and Support</a> </li>
+					</ul>
+			</li>
+			<li>
+				<a href="SHOP.html">SHOP</a>
+					<ul class="submenu">
+						<li><a href=>New Arrivals</a> </li>
+						<li><a href=>Collectables</a> </li>
+						<li><a href=>Toys</a> </li>
+						<li><a href=>Digital Products</a> </li>
+					</ul>
+			</li>
+		</ul>
+		
+		
+		<article>
+			<section>
+				<div class="movie-player" >
+					<video id="video-player" controls>
+					  <source src="The.School.for.Good.and.Evil.mkv" type="video/mp4">
+					</video>
+			    </div>
+			</section>	
+			
+			<section>
+			  <div class="movie-details">
+				<img src="The for Good and Evil.jpg" alt="The School for Good and Evil" style="width: 15%; height: 15%; float: left;">
+				<div class="movie-description">
+					  <h1>The School for Good and Evil</h1>
+					  <p id="about-description"> The School for Good and Evil" is a captivating fantasy film based on the best-selling book series by Soman Chainani. The story follows two young girls, Sophie and Agatha, who are unexpectedly whisked away to the extraordinary School for Good and Evil, where ordinary children are trained to become fairy tale heroes and villains.
+
+					Sophie, with her charming personality and love for all things pink and pretty, believes she is destined for the School for Good. On the other hand, Agatha, with her dark attire and skeptical nature, assumes she will be enrolled in the School for Evil. However, to their surprise, Sophie finds herself in the School for Evil, while Agatha ends up in the School for Good.
+
+					As the two girls navigate their way through the magical school, they face numerous challenges, including unraveling mysteries, forming unlikely alliances, and discovering the true meaning of friendship and self-identity. With the help of quirky classmates, magical creatures, and wise mentors, Sophie and Agatha embark on a thrilling adventure to uncover the secrets of the school and ultimately rewrite their own fairy tale destinies.
+
+					"The School for Good and Evil" is a visually stunning and emotionally engaging film that explores themes of friendship, identity, and the blurred lines between good and evil. It offers a fresh and imaginative take on traditional fairy tales, captivating audiences of all ages with its enchanting story and thought-provoking messages. </p>
+					  <button onclick="toggleDescription()" id="toggle-button">Read More</button>
+				</div>
+
+			<script>
+			  function toggleDescription() {
+				var description = document.getElementById("about-description");
+				var button = document.getElementById("toggle-button");
+
+				if (description.style.maxHeight) {
+				  description.style.maxHeight = null;
+				  button.innerHTML = "Read More";
+				} else {
+				  description.style.maxHeight = "200px";
+				  button.innerHTML = "Read Less";
+				}
+			  }
+			</script>
+			
+			  <script>
+			  
+			  
+			  
+				// JavaScript code to load the movie details dynamically
+				const movieTitleElement = document.getElementsByTagName('h1')[0];
+				const releaseDateElement = document.getElementById('release-date');
+				const directorElement = document.getElementById('director');
+				const genreElement = document.getElementById('genre');
+				const videoSourceElement = document.getElementById('video-source');
+
+				movieTitleElement.innerText = "The School of Good and Evil";
+				releaseDateElement.innerText = "2023-05-10";
+				directorElement.innerText = "Director Name";
+				genreElement.innerText = "Fantasy, Adventure";
+
+				// Replace 'school_of_good_and_evil.mp4' with the actual filename of the movie
+				const movieURL = 'school_of_good_and_evil.mp4';
+				videoSourceElement.setAttribute('src', movieURL);
+
+				// Add code to initialize and control the movie player
+				const videoPlayer = document.getElementById('video-player');
+				videoPlayer.load(); // Load the video
+				videoPlayer.play(); // Play the video
+
+			  </script>
+		</article>
+	</body>
+</html>
